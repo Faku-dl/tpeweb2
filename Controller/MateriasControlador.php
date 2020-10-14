@@ -24,7 +24,7 @@ class MateriasControlador
         if (empty($_SESSION['nombre_usuario'])) {
             //Existe un usuario logueado
         } else {
-            if (!empty($_SESSION['navegando']) && (time() - $_SESSION['navegando'] > 20000)) {
+            if (!empty($_SESSION['navegando']) && (time() - $_SESSION['navegando'] > 50)) {
 
                 header("Location: " . LOGOUT);
             }
