@@ -29,20 +29,23 @@
                         <a class="dropdown-item" href="#">Tercer Trimestre</a>
                     </div>
                 </li>
-            </ul>
+                </ul>
+                {if isset($smarty.session.nombre_usuario)}
+                    <h4>{$smarty.session.nombre_usuario}, El General te da la bienvenida</h4>
+                {/if}
         </div>
         <!-- Navbar links -->
         <div class="container d-flex flex-row-reverse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal10" data-keyboard="true">Crear una cuenta</a>
-                </li>
-                {if isset($smarty.session.nombre_usuario)}
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-primary"> <a href="logout" class="text-white show-decoration-none"> Cerrar sesión</a></button>
-                    </li>
-                {else}
-                    <li class="nav-item">
+        <ul class="navbar-nav">
+        {if isset($smarty.session.nombre_usuario)}
+            <li class="nav-item">
+            <button type="button" class="btn btn-primary"> <a href="logout" class="text-white show-decoration-none"> Cerrar sesión</a></button>
+            </li>
+            {else}
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal10" data-keyboard="true">Crear una cuenta</a>
+            </li>
+            <li class="nav-item">
                         <button type="button" class="btn btn-primary"> <a href="login" class="text-white show-decoration-none"> Ingresar</a></button>
                     </li>
                 {/if}
@@ -65,10 +68,12 @@
                             </div>
                             <!-- Cuerpo de la ventana -->
                             <div class="container">
+                            <h3>Perón te necesita</h3>
                                 <div class="modal-body">
                                     <!-- REVISAR FORM ACTION-->
                                     <form action="CrearUsuario" method="POST" class="was-validated" valid-feedback>
                                         <div class="form-group">
+                                            <P></P>
                                             <label for="pwd">Nombre de Usuario:</label>
                                             <input type="text" class="form-control" placeholder="Nombre corto plis" id="name" name="crear_nombre">
                                         </div>
@@ -78,7 +83,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="pwd">Contraseña:</label>
-                                            <input type="password" class="form-control" placeholder="No vale 123456" id="pwd" name="crear_password">
+                                            <input type="password" class="form-control" placeholder="password: No vale 123456" id="pwd" name="crear_password">
                                         </div>
                                         <button type="submit" class="btn btn-success">Crear Usuario</button>
                                     </form>

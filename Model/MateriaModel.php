@@ -92,11 +92,11 @@ class MateriaModel
         $sentencia = $this->db->prepare('DELETE FROM alumno WHERE id_alumno=?');
         $sentencia->execute(array($id_alumno));
     }
-    function editAlumno($id_alumno, $alumno, $email,$conducta,$calificacion)
+    function editAlumno($id_alumno, $alumno, $email,$conducta,$calificacion, $materia)
     {
 
-        $sentencia = $this->db->prepare('UPDATE alumno  SET nombre_alumno=?, email=?, conducta=?, calificacion=? WHERE id_alumno=?');
-        $sentencia->execute(array($alumno, $email,$conducta,$calificacion,$id_alumno));
+        $sentencia = $this->db->prepare('UPDATE alumno  SET nombre_alumno=?, email=?, conducta=?, calificacion=?, materia=? WHERE id_alumno=?');
+        $sentencia->execute(array($alumno, $email,$conducta,$calificacion, $materia, $id_alumno));
     }
 
     function MostrarAlumno($id_materia)

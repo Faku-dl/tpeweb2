@@ -46,25 +46,3 @@ $r->addRoute("main", "GET","MateriasControlador","Home"); //Agregué este que ap
 $r->setDefaultRoute("MateriasControlador", "Home");
 //RUN
 $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
-
-
-
-/*if (isset($partesURL[0])){
-    
-    $controller->home();
-}
-
- else{
-     if (!empty($_GET['action'])&&($_GET['action']=='agregarMateria')){
-
-         insertTarea();
- }
- else if()
-
-
-           }    
-// parsea la accion Ej: suma/1/2 --> ['suma', 1, 2]
-
-// determina que camino seguir según la acción
-
-*/

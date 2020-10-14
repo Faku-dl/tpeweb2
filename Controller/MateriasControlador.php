@@ -112,7 +112,7 @@ class MateriasControlador
     function getAlumnosPorAsig()
     {
         // $Asignatura = $_GET['action'];
-        //$this->comprobarSiHayUsuario();
+        $this->comprobarSiHayUsuario();
         if ($_GET['select_materia'] != "Todas") {
             $Alumnos = $this->model->getAlumnosporAsig($_GET['select_materia']);
             $Titulo = "Materia:" . $_GET['select_materia'];
@@ -161,7 +161,6 @@ class MateriasControlador
         $conducta = $_POST['edit_conducta'];
         $calificacion = $_POST['edit_calificacion'];
         $materia = $_POST['select_materia'];
-
         $this->model->editAlumno($id_alumno, $alumno, $email, $conducta, $calificacion, $materia);
         $this->view->showTablaAlumnos();
     }
